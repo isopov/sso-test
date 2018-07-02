@@ -1,0 +1,25 @@
+github-client-id: my_value
+github-cliente-secret: my_value
+
+server:
+  port: 9080
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${github-client-id}
+            client-secret: ${github-cliente-secret}
+            client-name: Github user
+            provider: github
+            scope: user
+security:
+  oauth2:
+    client:
+      id: github
+      client-id: ${github-client-id}
+      client-secret: ${github-cliente-secret}
+      user-authorization-uri: https://github.com/login/oauth/authorize
+      access-token-uri: https://github.com/login/oauth/access_token
